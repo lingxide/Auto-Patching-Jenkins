@@ -29,7 +29,6 @@ pipeline {
 
     stage('Postcheck') {
       steps {
-        isUnix()
         timestamps()
       }
     }
