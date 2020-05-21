@@ -14,7 +14,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('uptime') {
       steps {
         retry(count: 3) {
           timeout(time: 10) {
@@ -24,6 +24,13 @@ pipeline {
 
         }
 
+      }
+    }
+
+    stage('Postcheck') {
+      steps {
+        isUnix()
+        timestamps()
       }
     }
 
