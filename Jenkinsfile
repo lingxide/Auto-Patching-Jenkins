@@ -29,7 +29,7 @@ pipeline {
 
     stage('Run Playbook') {
       steps {
-        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true)
+        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true, inventory: '/mnt/xfer/ansible/hosts')
       }
     }
 
