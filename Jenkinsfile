@@ -4,7 +4,6 @@ pipeline {
     stage('Env Setup') {
       steps {
         sh 'pwd'
-        timestamps()
       }
     }
 
