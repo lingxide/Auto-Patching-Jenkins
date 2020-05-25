@@ -33,5 +33,11 @@ pipeline {
       }
     }
 
+    stage('Run Playbook') {
+      steps {
+        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true)
+      }
+    }
+
   }
 }
