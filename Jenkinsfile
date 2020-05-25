@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Env Setup') {
       steps {
-        echo 'Just printed current folder'
         sh 'pwd'
+        timestamps()
       }
     }
 
