@@ -8,22 +8,9 @@ pipeline {
       }
     }
 
-    stage('Sleep') {
+    stage('adhoc command') {
       steps {
-        sleep 5
-      }
-    }
-
-    stage('uptime') {
-      steps {
-        retry(count: 3) {
-          timeout(time: 10) {
-            sh 'w'
-            sleep 3
-          }
-
-        }
-
+        sh 'whoami'
       }
     }
 
