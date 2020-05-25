@@ -29,7 +29,7 @@ pipeline {
 
     stage('Run Playbook') {
       steps {
-        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true, inventory: '/mnt/xfer/ansible/hosts', credentialsId: '/opt/patch-keys/id_rsa')
+        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true, inventory: '/mnt/xfer/ansible/hosts', credentialsId: '/opt/patch-keys/id_rsa', become: true, becomeUser: 'root')
       }
     }
 
