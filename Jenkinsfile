@@ -16,7 +16,7 @@ pipeline {
 
     stage('Run Playbook') {
       steps {
-        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true, inventory: '/mnt/xfer/ansible/hosts', become: true, becomeUser: 'root', extras: '--private-key "/opt/patch-keys/id_rsa"')
+        ansiblePlaybook(playbook: '/mnt/xfer/ansible/patching.yml', colorized: true, inventory: '/mnt/xfer/ansible/hosts', become: true, becomeUser: 'root', extras: '--private-key "/opt/patch-keys/id_rsa" -vvv')
       }
     }
 
