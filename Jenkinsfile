@@ -29,11 +29,6 @@ pipeline {
     stage('Server Reboot') {
       steps {
         ansiblePlaybook(playbook: '/mnt/xfer/ansible/reboot.yml', extras: '-u root --private-key "/opt/patch-keys/id_rsa" -vvv', inventory: '/mnt/xfer/ansible/hosts')
-        retry(count: 20) {
-          sleep 5
-          ansiblePlaybook(playbook: '/mnt/xfer/ansible/keepalive.yml', extras: '-u root --private-key "/opt/patch-keys/id_rsa" -vvv', inventory: '/mnt/xfer/ansible/hosts')
-        }
-
       }
     }
 
