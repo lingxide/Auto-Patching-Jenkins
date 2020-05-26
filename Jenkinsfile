@@ -4,6 +4,7 @@ pipeline {
     stage('Env Setup') {
       steps {
         sh 'pwd'
+        sh 'sudo mount -a'
       }
     }
 
