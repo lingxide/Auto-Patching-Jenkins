@@ -28,7 +28,10 @@ pipeline {
 
     stage('Server Reboot') {
       steps {
+        echo 'Reboot The Server'
         ansiblePlaybook(playbook: '/mnt/xfer/ansible/reboot.yml', extras: '-u root --private-key "/opt/patch-keys/id_rsa" -vvv', inventory: '/mnt/xfer/ansible/hosts')
+        echo 'Wait Till Server Alive'
+        ansiblePlaybook(playbook: '/mnt/xfer/ansible/keepalive.yml', extras: '-u root --private-key "/opt/patch-keys/id_rsa" -vvv', inventory: '/mnt/xfer/ansible/hosts')
       }
     }
 
