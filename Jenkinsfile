@@ -10,7 +10,8 @@ pipeline {
 
     stage('Adhoc Command') {
       steps {
-        sh 'whoami'
+        echo 'Build Live Server List'
+        sh 'bash /mnt/xfer/ansible/pinglive.sh'
       }
     }
 
